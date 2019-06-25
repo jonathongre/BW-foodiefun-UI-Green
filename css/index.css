@@ -163,18 +163,14 @@ a {
 }
 .navigation {
   width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
   background: #3B413C;
 }
-@media (max-width: 500px) {
-  .navigation {
-    flex-direction: column;
-  }
-}
 .navigation h1 {
-  color: #FFFFFF;
+  color: #DAF0EE;
 }
 .navigation .logo {
   font-size: 4rem;
@@ -183,15 +179,32 @@ a {
   padding-top: 20px;
   align-content: space-between;
 }
-.navigation a {
+@media (max-width: 500px) {
+  .navigation .nav-links {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+a {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #DAF0EE;
   text-decoration: none;
   padding: 0 20px;
   transition: all 0.5s ease;
 }
-.navigation a:hover {
+a:hover {
   color: #9DB5B2;
+}
+@media (max-width: 500px) {
+  a {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .feat-link {
+    display: none;
+  }
 }
 footer {
   height: 80px;
@@ -201,10 +214,16 @@ footer {
   background-color: #3B413C;
   color: #FFFFFF;
 }
+@media (max-width: 500px) {
+  footer {
+    flex-direction: column;
+  }
+}
 footer a {
   padding: 0 20px;
   text-decoration: none;
   color: #FFFFFF;
+  transition: all 0.5s ease;
 }
 footer a:hover {
   color: #9DB5B2;
@@ -212,6 +231,11 @@ footer a:hover {
 footer span {
   font-size: 2rem;
   color: #FFFFFF;
+}
+@media (max-width: 500px) {
+  footer span {
+    padding-top: 20px;
+  }
 }
 .title {
   width: 100%;
@@ -227,6 +251,7 @@ footer span {
 .title h1 {
   font-size: 5rem;
   color: #FFFFFF;
+  font-weight: bold;
   text-shadow: 2px 2px #000;
   padding-top: 100px;
   padding-bottom: 30px;
@@ -237,26 +262,30 @@ footer span {
   font-size: 2rem;
   padding-bottom: 50px;
 }
-.title a {
+.title .title-button {
   height: 40px;
-  width: 100%;
-  padding: 15px 30px;
+  width: 150px;
   font-size: 2rem;
   border: 2px solid #9DB5B2;
   border-radius: 5px;
   color: #FFFFFF;
   background-color: #9DB5B2;
   text-decoration: none;
+  box-shadow: 4px 4px #000;
 }
-.title a:hover {
-  background-color: transparent;
+.title .title-button:hover {
+  opacity: 0.8;
+}
+.title .title-button:active {
+  box-shadow: 2px 2px #000;
+  transform: translateY(2px);
 }
 .section {
   width: 100%;
   margin: auto;
   display: flex;
   overflow: hidden;
-  background-color: #9DB5B2;
+  background: linear-gradient(to bottom, #9DB5B2 0%, #DAF0EE 100%);
 }
 @media (max-width: 500px) {
   .section {
@@ -292,6 +321,7 @@ footer span {
 }
 .tabs .tabs-item {
   display: none;
+  height: auto;
   width: 100%;
 }
 .tabs .tabs-item .tabs-item-title {
@@ -321,6 +351,7 @@ footer span {
   background-color: #94D1BE;
   border-right: 1px solid white;
   color: #FFFFFF;
+  text-shadow: 1px 1px #000;
   cursor: pointer;
 }
 @media (max-width: 500px) {
@@ -328,6 +359,7 @@ footer span {
     max-width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 }
 .tabs .tabs-link:hover {

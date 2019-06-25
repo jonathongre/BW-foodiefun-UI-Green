@@ -12,6 +12,7 @@
     h1 {
         font-size: 5rem;
         color: @white;
+        font-weight: bold;
         text-shadow: 2px 2px #000;
         padding-top: 100px;
         padding-bottom: 30px;
@@ -24,19 +25,24 @@
         padding-bottom: 50px;
     }
 
-    a {
+    .title-button {
         height: 40px;
-        width: 100%;
-        padding: 15px 30px;
+        width: 150px;
         font-size: 2rem;
         border: 2px solid @cambridgeBlue;
         border-radius: 5px;
         color: @white;
         background-color: @cambridgeBlue;
         text-decoration: none;
+        box-shadow: 4px 4px #000;
 
         &:hover {
-            background-color: transparent;
+            opacity: 0.8;
+        }
+
+        &:active {
+            box-shadow: 2px 2px #000;
+            transform: translateY(2px);
         }
     }
 
@@ -47,7 +53,7 @@
     margin: auto;
     display: flex;
     overflow: hidden;
-    background-color: @cambridgeBlue;
+    background: linear-gradient(to bottom, #9DB5B2 0%, #DAF0EE 100%);
 
     @media @phone {
         max-width: 100%;
@@ -85,7 +91,7 @@
 
     .tabs-item {
         display: none;
-
+        height: auto;
         width: 100%;
 
         .tabs-item-title {
@@ -109,6 +115,7 @@
         @media @phone {
             flex-direction: column;
             width: 100%;
+
         }
     }
 
@@ -118,12 +125,14 @@
         background-color: @pearlAqua;
         border-right: 1px solid white;
         color: @white;
+        text-shadow: 1px 1px #000;
         cursor: pointer;
 
         @media @phone {
             max-width: 100%;
             display: flex;
             flex-direction: column;
+            text-align: center;
         }
 
         &:hover {

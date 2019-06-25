@@ -1,16 +1,15 @@
 .navigation {
     width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    background: @nav-bg;
+    align-items: center;
+    background: #3B413C;
 
-    @media @phone {
-        flex-direction: column;
-    }
+
 
     h1 {
-        color: #FFFFFF;
+        color: #DAF0EE;
     }
 
     .logo {
@@ -21,16 +20,31 @@
         padding-top: 20px;
         align-content: space-between;
 
+        @media @phone {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+}
+
+a {
+    .navStyle(#DAF0EE);
+    text-decoration: none;
+    padding: 0 20px;
+    transition: all 0.5s ease;
+
+    &:hover {
+        color: @cambridgeBlue;
     }
 
-    a {
-        .navStyle(@white);
-        text-decoration: none;
-        padding: 0 20px;
-        transition: all 0.5s ease;
+    @media @phone {
+        padding-top: 20px;
+    }
+}
 
-        &:hover {
-            color: @cambridgeBlue;
-        }
+.feat-link {
+    @media @phone {
+        display: none;
     }
 }
